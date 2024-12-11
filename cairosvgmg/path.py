@@ -28,11 +28,12 @@ def draw_markers(surface, node):
 
     angle1, angle2 = None, None
     position = 'start'
-
+    
     while node.vertices:
         # Calculate position and angle
         point = node.vertices.pop(0)
         angles = node.vertices.pop(0) if node.vertices else None
+        
         if angles:
             if position == 'start':
                 angle = pi - angles[0]
@@ -40,7 +41,7 @@ def draw_markers(surface, node):
                 angle = (angle2 + pi - angles[0]) / 2
             angle1, angle2 = angles
         else:
-            angle = angle2
+            angle = angle1
             position = 'end'
 
         # Draw marker (if a marker exists for 'position')
@@ -91,6 +92,8 @@ def draw_markers(surface, node):
                 angle = radians(float(node_angle))
             elif node_angle == 'auto-start-reverse' and position == 'start':
                 angle += radians(180)
+                
+            angle += radians(180)
 
             # Draw marker path
             # See http://www.w3.org/TR/SVG/painting.html#MarkerAlgorithm

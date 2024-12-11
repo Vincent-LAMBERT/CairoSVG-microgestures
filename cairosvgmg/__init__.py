@@ -10,7 +10,7 @@ if hasattr(sys, 'frozen'):
     if hasattr(sys, '_MEIPASS'):
         # Frozen with PyInstaller
         # See https://github.com/Kozea/WeasyPrint/pull/540
-        ROOT = Path(sys._MEIPASS) / 'cairosvg'
+        ROOT = Path(sys._MEIPASS) / 'cairosvgmg'
     else:
         # Frozen with something else (py2exe, etc.)
         # See https://github.com/Kozea/WeasyPrint/pull/269

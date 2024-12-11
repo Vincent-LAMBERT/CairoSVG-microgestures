@@ -117,7 +117,7 @@ def test_low_level_api():
 
 
 def test_script(tmp_path):
-    """Test the ``cairosvg`` script and the ``main`` function."""
+    """Test the ``cairosvgmg`` script and the ``main`` function."""
     expected_png = svg2png(SVG_SAMPLE)[:100]
     expected_pdf = svg2pdf(SVG_SAMPLE)[:100]
 
@@ -130,7 +130,7 @@ def test_script(tmp_path):
         If ``input_`` is given, use this stream as input stream.
 
         """
-        sys.argv = ['cairosvg'] + args
+        sys.argv = ['cairosvgmg'] + args
         old_stdin, old_stdout = sys.stdin, sys.stdout
 
         output_buffer = io.BytesIO()

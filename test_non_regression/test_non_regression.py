@@ -11,7 +11,7 @@ import tempfile
 
 import pytest
 
-from . import FILES, cairosvg, reference_cairosvg
+from . import FILES, cairosvgmg, reference_cairosvg
 
 
 @pytest.mark.parametrize('svg_filename', FILES)
@@ -19,8 +19,8 @@ def test_image(svg_filename):
     """Check that the pixels match between ``svg`` and ``png``."""
     test_png = tempfile.NamedTemporaryFile(
         prefix='test-', suffix='.png', delete=False)
-    test_surface = cairosvg.surface.PNGSurface(
-        cairosvg.parser.Tree(url=svg_filename, unsafe=True), test_png,
+    test_surface = cairosvgmg.surface.PNGSurface(
+        cairosvgmg.parser.Tree(url=svg_filename, unsafe=True), test_png,
         dpi=72)
     test_pixels = test_surface.cairo.get_data()[:]
 

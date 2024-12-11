@@ -3,9 +3,9 @@ CairoSVG helpers tests.
 
 """
 
-from . import cairosvg
+from . import cairosvgmg
 
-helpers = cairosvg.helpers
+helpers = cairosvgmg.helpers
 
 
 def test_distance():

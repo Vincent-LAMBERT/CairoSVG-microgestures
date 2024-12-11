@@ -7,9 +7,9 @@ You'll find in this folder:
 
 If you want to check that CairoSVG works on your computer, you should not
 launch the tests here, you should instead launch tests in
-``cairosvg/test_api.py``::
+``cairosvgmg/test_api.py``::
 
-  pytest cairosvg/test_api.py
+  pytest cairosvgmg/test_api.py
 
 The tests here are regression tests: they generate reference images using an
 old version on CairoSVG and compare them to the current version. They are based
